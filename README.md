@@ -49,30 +49,56 @@ largura, altura = 220, 220
   while True:
 `
 
-  1 - O dispositivo começa a gravar em loop:
+  A - O dispositivo começa a gravar em loop:
   
   `
       conectado, imagem = camera.read()
   `
   
-  2 - As imagens são convertidas em escala de cinza:
+  B - As imagens são convertidas em escala de cinza:
   
   `
       imagemCinza = cv2.cvtColor(imagem, cv2.COLOR_BGR2GRAY)
   `
   
-  3 - As imagens são processadas pelo classificador:
+  C - As imagens são processadas pelo classificador:
   
   `
       facesDetectadas = classificador.detectMultiScale(imagemCinza, scaleFactor=1.5, minSize=(150, 150))
   `
  
-  4 - É desenhado retângulos ao redor da face e dos olhos:
+  D - É desenhado retângulos ao redor da face e dos olhos:
   
+  `
+      for x, y, l, a in facesDetectadas:
+  `
+  
+  `
+        cv2.rectangle(imagem, (x, y), (x + l, y + a), (0, 0, 255), 2)
+  `
+  
+  `
+        regiao = imagem[y:y + a, x:x + l]
+  `
+  
+  `
+        regiaoCinzaOlho = cv2.cvtColor(regiao, cv2.COLOR_BGR2GRAY)
+  `
+  
+  `
+        olhosDetectados = classificadorOlho.detectMultiScale(regiaoCinzaOlho)
+  `
 
+  `
+        for ox,oy,ol,oa in olhosDetectados:
+  `
   
-  5 - Uma janela com a live e todas as informações é aberta:
+  `
+            cv2.rectangle(regiao, (ox,oy), (ox + ol, oy + oa), (0, 0, 255), 2)
+  `
   
+  E - Uma janela com a live e todas as informações é aberta:
+ 
   `
     cv2.imshow("Detector", imagem)
   `
