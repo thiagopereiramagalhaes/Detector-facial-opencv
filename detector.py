@@ -1,5 +1,4 @@
 import cv2
-import numpy as np
 
 classificador = cv2.CascadeClassifier('haarcascade/haarcascade-frontalface-default.xml')
 classificadorOlho = cv2.CascadeClassifier('haarcascade/haarcascade_eye.xml')
