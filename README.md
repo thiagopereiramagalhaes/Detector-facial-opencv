@@ -75,3 +75,9 @@
 <code>cv2.destroyAllWindows()</code>
 </div>
 </ol>
+
+<h3>Exemplo:</h3>
+
+![Exemplo Detector](https://user-images.githubusercontent.com/51063415/138610489-995329be-d3e8-4b85-8624-758cabc04867.png)
+
+
