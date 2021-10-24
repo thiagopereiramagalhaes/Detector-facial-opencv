@@ -11,13 +11,13 @@ pip install opencv-python
 
 Este projeto consiste em um detector de faces com haarcascade.
 
-1 - Primeiramente vamos começar importando o openCV:
+**1 - Primeiramente vamos começar importando o openCV:**
 
 `
 import cv2
 `
 
-2 - Vamos passar o caminho dos haarcascades: 
+**2 - Vamos passar o caminho dos haarcascades:**
 
 O algoritmo Haar Cascade, é um algoritmo de detecção de objetos, que utiliza diversos classificadores.
 
@@ -33,7 +33,7 @@ classificador = cv2.CascadeClassifier('haarcascade/haarcascade-frontalface-defau
 classificadorOlho = cv2.CascadeClassifier('haarcascade/haarcascade_eye.xml')
 `
 
-3 - Passamos o dispositivo de câmera que pretendemos usar e o tamanho da janela da aplicação:
+**3 - Passamos o dispositivo de câmera que pretendemos usar e o tamanho da janela da aplicação:**
 
 `
 camera = cv2.VideoCapture(0)
@@ -43,7 +43,7 @@ camera = cv2.VideoCapture(0)
 largura, altura = 220, 220
 `
 
-4 - A seguir:
+**4 - A seguir:**
 
 `
   while True:
@@ -107,7 +107,7 @@ largura, altura = 220, 220
     cv2.waitKey(1)
   `
   
-5 - Libera memória e fecha todas as janelas abertas:
+**5 - Libera memória e fecha todas as janelas abertas:**
  
 `
 camera.release()
