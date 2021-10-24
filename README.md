@@ -21,7 +21,7 @@ import cv2
 
 O algoritmo Haar Cascade, é um algoritmo de detecção de objetos, que utiliza diversos classificadores.
 
-**Frontal face: Responsável por classificar a parte frontal de uma pessoa.**
+**Frontal face: Responsável por classificar a parte frontal de uma face.**
 
 `
 classificador = cv2.CascadeClassifier('haarcascade/haarcascade-frontalface-default.xml')
